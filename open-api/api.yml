@@ -177,7 +177,7 @@ components:
             - `3` 为 音乐
             - `4` 为 游戏
             - `6` 为 三次元
-            
+
             没有 `5`
           x-ms-enum:
             name: SubjectType
@@ -317,7 +317,7 @@ components:
               example: 86
     Legacy_SubjectMedium:
       allOf:
-        - $ref: '#/components/schemas/Legacy_SubjectSmall'
+        - $ref: "#/components/schemas/Legacy_SubjectSmall"
         - type: object
           properties:
             crt:
@@ -325,7 +325,7 @@ components:
               type: array
               items:
                 allOf:
-                  - $ref: '#/components/schemas/Legacy_Character'
+                  - $ref: "#/components/schemas/Legacy_Character"
                   - type: object
                     properties:
                       role_name:
@@ -337,7 +337,7 @@ components:
               type: array
               items:
                 allOf:
-                  - $ref: '#/components/schemas/Legacy_Person'
+                  - $ref: "#/components/schemas/Legacy_Person"
                   - type: object
                     properties:
                       role_name:
@@ -351,24 +351,24 @@ components:
                           type: string
     Legacy_SubjectLarge:
       allOf:
-        - $ref: '#/components/schemas/Legacy_SubjectMedium'
+        - $ref: "#/components/schemas/Legacy_SubjectMedium"
         - type: object
           properties:
             eps:
               description: 章节列表
               type: array
               items:
-                $ref: '#/components/schemas/Legacy_Episode'
+                $ref: "#/components/schemas/Legacy_Episode"
             topic:
               description: 讨论版
               type: array
               items:
-                $ref: '#/components/schemas/Legacy_Topic'
+                $ref: "#/components/schemas/Legacy_Topic"
             blog:
               description: 评论日志
               type: array
               items:
-                $ref: '#/components/schemas/Legacy_Blog'
+                $ref: "#/components/schemas/Legacy_Blog"
     Legacy_EpisodeType:
       description: 章节类型
         <br> 0 = 本篇
@@ -401,7 +401,7 @@ components:
           type: string
           example: https://bgm.tv/ep/1027
         type:
-          $ref: '#/components/schemas/Legacy_EpisodeType'
+          $ref: "#/components/schemas/Legacy_EpisodeType"
         sort:
           description: 集数
           type: integer
@@ -421,7 +421,7 @@ components:
         airdate:
           description: 放送日期
           type: string
-          example: '2002-04-03'
+          example: "2002-04-03"
         comment:
           description: 回复数量
           type: integer
@@ -466,7 +466,7 @@ components:
           description: 回复数
           type: integer
         user:
-          $ref: '#/components/schemas/Legacy_User'
+          $ref: "#/components/schemas/Legacy_User"
     Legacy_Blog:
       description: 日志
       type: object
@@ -498,7 +498,7 @@ components:
           type: string
           example: 2013-1-2 16:41
         user:
-          $ref: '#/components/schemas/Legacy_User'
+          $ref: "#/components/schemas/Legacy_User"
     Legacy_User:
       description: 用户信息
       type: object
@@ -537,7 +537,7 @@ components:
           type: string
           example: Awesome!
         usergroup:
-          $ref: '#/components/schemas/Legacy_UserGroup'
+          $ref: "#/components/schemas/Legacy_UserGroup"
     Legacy_UserGroup:
       description: >-
         用户组
@@ -565,24 +565,24 @@ components:
     Legacy_Person:
       description: 现实人物
       allOf:
-        - $ref: '#/components/schemas/Legacy_Mono'
+        - $ref: "#/components/schemas/Legacy_Mono"
         - type: object
           properties:
             info:
-              $ref: '#/components/schemas/Legacy_MonoInfo'
+              $ref: "#/components/schemas/Legacy_MonoInfo"
     Legacy_Character:
       description: 虚拟角色
       allOf:
-        - $ref: '#/components/schemas/Legacy_Mono'
+        - $ref: "#/components/schemas/Legacy_Mono"
         - type: object
           properties:
             info:
-              $ref: '#/components/schemas/Legacy_MonoInfo'
+              $ref: "#/components/schemas/Legacy_MonoInfo"
             actors:
               description: 声优列表
               type: array
               items:
-                $ref: '#/components/schemas/Legacy_MonoBase'
+                $ref: "#/components/schemas/Legacy_MonoBase"
     Legacy_MonoBase:
       description: 人物（基础模型）
       type: object
@@ -615,7 +615,7 @@ components:
     Legacy_Mono:
       description: 人物
       allOf:
-        - $ref: '#/components/schemas/Legacy_MonoBase'
+        - $ref: "#/components/schemas/Legacy_MonoBase"
         - type: object
           properties:
             name_cn:
